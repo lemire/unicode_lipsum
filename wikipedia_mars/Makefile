@@ -4,10 +4,10 @@
 	html2text $^ > $@
 
 %.utf16.txt: %.utf8.txt
-	iconv -f UTF-8 -t UTF-16 $^ > $@
+	iconv -f UTF-8 -t UTF-16LE $^ > $@
 
 %.utf32.txt: %.utf8.txt
-	iconv -f UTF-8 -t UTF-32 $^ > $@
+	iconv -f UTF-8 -t UTF-32LE $^ > $@
 
 HTML=english.html \
      french.html \
