@@ -6,6 +6,9 @@
 %.utf16.txt: %.utf8.txt
 	iconv -f UTF-8 -t UTF-16 $^ > $@
 
+%.utf32.txt: %.utf8.txt
+	iconv -f UTF-8 -t UTF-32 $^ > $@
+
 HTML=english.html \
      french.html \
      persan.html \
@@ -26,8 +29,9 @@ HTML=english.html \
      chinese.html
 TXT=$(HTML:html=utf8.txt)
 TXT16=$(HTML:html=utf16.txt)
+TXT32=$(HTML:html=utf32.txt)
 
-all: $(HTML) $(TXT) $(TXT16)
+all: $(HTML) $(TXT) $(TXT16) $(TXT32)
 
 english.html:
 	wget -O $@ https://en.wikipedia.org/wiki/Mars

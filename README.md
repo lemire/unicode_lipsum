@@ -1,8 +1,9 @@
 # unicode_lipsum
 
-Tests files encoded with UTF-8 and UTF-16LE (LE).
+Tests files encoded with UTF-8, UTF-16LE and UTF-32LE.
 
-By convention, all UTF-8 files end with `.utf8.txt` while all UTF-16LE files end with `.utf16.txt`.
+By convention, all UTF-8 files end with `.utf8.txt` while all UTF-16LE files end with `.utf16.txt` and
+all UTF-32LE end with `.utf32.txt`.
 
 
 The wikipedia_mars files are derived from the Mars wikipedia article in different languages.
