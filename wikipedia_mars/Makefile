@@ -3,6 +3,7 @@
 %.utf8.txt: %.html
 	html2text $^ > $@
 
+
 %.utf16.txt: %.utf8.txt
 	iconv -f UTF-8 -t UTF-16LE $^ > $@
 
@@ -31,7 +32,7 @@ TXT=$(HTML:html=utf8.txt)
 TXT16=$(HTML:html=utf16.txt)
 TXT32=$(HTML:html=utf32.txt)
 
-all: $(HTML) $(TXT) $(TXT16) $(TXT32)
+all: $(HTML) $(TXT) $(TXT16) $(TXT32) esperanto.latin1.txt french.latin1.txt german.latin1.txt portuguese.latin1.txt
 
 english.html:
 	wget -O $@ https://en.wikipedia.org/wiki/Mars
@@ -86,3 +87,16 @@ korean.html:
 
 chinese.html:
 	wget -O $@ https://zh.wikipedia.org/wiki/%E7%81%AB%E6%98%9F
+
+
+esperanto.latin1.txt: esperanto.utf8.txt
+	-iconv -c -f UTF-8 -t ISO-8859-1 $^ > $@
+
+french.latin1.txt: french.utf8.txt
+	-iconv -c -f UTF-8 -t ISO-8859-1 $^ > $@
+
+german.latin1.txt: german.utf8.txt
+	-iconv -c -f UTF-8 -t ISO-8859-1 $^ > $@
+
+portuguese.latin1.txt: portuguese.utf8.txt
+	-iconv -c -f UTF-8 -t ISO-8859-1 $^ > $@
