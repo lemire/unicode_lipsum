@@ -32,8 +32,7 @@ TXT=$(HTML:html=utf8.txt)
 TXT16=$(HTML:html=utf16.txt)
 TXT32=$(HTML:html=utf32.txt)
 
-all: $(HTML) $(TXT) $(TXT16) $(TXT32) esperanto.latin1.txt french.latin1.txt german.latin1.txt portuguese.latin1.txt
-
+all: $(HTML) $(TXT) $(TXT16) $(TXT32) esperanto.latin1.txt french.latin1.txt german.latin1.txt portuguese.latin1.txt esperanto.utflatin8.txt french.utflatin8.txt german.utflatin8.txt portuguese.utflatin8.txt esperanto.utflatin16.txt french.utflatin16.txt german.utflatin16.txt portuguese.utflatin16.txt  esperanto.utflatin32.txt french.utflatin32.txt german.utflatin32.txt portuguese.utflatin32.txt
 english.html:
 	wget -O $@ https://en.wikipedia.org/wiki/Mars
 
@@ -100,3 +99,41 @@ german.latin1.txt: german.utf8.txt
 
 portuguese.latin1.txt: portuguese.utf8.txt
 	-iconv -c -f UTF-8 -t ISO-8859-1 $^ > $@
+
+
+esperanto.utflatin8.txt: esperanto.latin1.txt
+	-iconv -t UTF-8 -f ISO-8859-1 $^ > $@
+
+french.utflatin8.txt: french.latin1.txt
+	-iconv -t UTF-8 -f ISO-8859-1 $^ > $@
+
+german.utflatin8.txt: german.latin1.txt
+	-iconv -t UTF-8 -f ISO-8859-1 $^ > $@
+
+portuguese.utflatin8.txt: portuguese.latin1.txt
+	-iconv -t UTF-8 -f ISO-8859-1 $^ > $@
+
+esperanto.utflatin16.txt: esperanto.latin1.txt
+	-iconv -t UTF-16LE -f ISO-8859-1 $^ > $@
+
+french.utflatin16.txt: french.latin1.txt
+	-iconv -t UTF-16LE -f ISO-8859-1 $^ > $@
+
+german.utflatin16.txt: german.latin1.txt
+	-iconv -t UTF-16LE -f ISO-8859-1 $^ > $@
+
+portuguese.utflatin16.txt: portuguese.latin1.txt
+	-iconv -t UTF-16LE -f ISO-8859-1 $^ > $@
+
+
+esperanto.utflatin32.txt: esperanto.latin1.txt
+	-iconv -t UTF-32LE -f ISO-8859-1 $^ > $@
+
+french.utflatin32.txt: french.latin1.txt
+	-iconv -t UTF-32LE -f ISO-8859-1 $^ > $@
+
+german.utflatin32.txt: german.latin1.txt
+	-iconv -t UTF-32LE -f ISO-8859-1 $^ > $@
+
+portuguese.utflatin32.txt: portuguese.latin1.txt
+	-iconv -t UTF-32LE -f ISO-8859-1 $^ > $@

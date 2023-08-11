@@ -6,7 +6,7 @@ By convention, all UTF-8 files end with `.utf8.txt` while all UTF-16LE files end
 all UTF-32LE end with `.utf32.txt`.
 
 A small number of files are encoded using Latin 1 (ISO-8859-1): esperanto.latin1.txt, french.latin1.txt, german.latin1.txt, portuguese.latin1.txt
-in the wikipedia_mars directory. They are not exactly equivalent to the Unicode files: e.g., it is not possible to reproduce the equivalent UTF-8 files from the Latin 1 files.
+in the wikipedia_mars directory. They are not exactly equivalent to the Unicode files: e.g., it is not possible to reproduce the equivalent Unicode files from the Latin 1 files. However, we have have modified Unicode files with the suffixes `.utflatin8.txt` (UTF-8 recovered from Latin 1), `.utflatin16.txt` (UTF-16LE recovered from Latin 1), `.utflatin32.txt` (UTF-32LE recovered from Latin 1).
 
 The wikipedia_mars files are derived from the Mars wikipedia article in different languages.
 Wikipedia is licensed under a Creative Commons license.
