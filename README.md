@@ -17,3 +17,15 @@ by Hans Kratz (licensed under both MIT and Apache).
 
 
 These files are provided for research purposes.
+
+## BibTeX
+
+```bibtex
+@misc{lemire_unicode_lipsum,
+	author       = {Daniel Lemire},
+	title        = {The unicode lipsum dataset},
+	year         = {2026},
+	howpublished = {\url{https://github.com/lemire/unicode_lipsum}},
+	note         = {GitHub repository}
+}
+```
